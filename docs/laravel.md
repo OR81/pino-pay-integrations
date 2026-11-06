@@ -45,7 +45,7 @@ php artisan vendor:publish --tag=pino-pay-config
 
 ## مثال کامل
 
-این مثال یک مدل `Order` با ستون‌های `amount` (به ریال)، `authority` و `paid_at` را فرض می‌کند.
+این مثال یک مدل `Order` با ستون‌های `amount` (به ریال)، `mobile`، `authority`، `ref_id` و `paid_at` را فرض می‌کند. این ستون‌ها باید با `update()` قابل پر شدن باشند و مسیری هم با نام `orders.show` برای نمایش سفارش لازم است.
 
 ### مسیرها
 

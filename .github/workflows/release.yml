@@ -1,0 +1,36 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: The tag must match the plugin's version
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          plugin=wordpress/pino-pay-for-woocommerce
+          grep -q "^ \* Version: *${version}$" "$plugin/pino-pay-for-woocommerce.php"
+          grep -q "define( 'PINOPAY_WC_VERSION', '${version}' );" "$plugin/pino-pay-for-woocommerce.php"
+          grep -q "^Stable tag: ${version}$" "$plugin/readme.txt"
+
+      - name: Build the plugin zip
+        run: |
+          mkdir -p build
+          cd wordpress
+          zip -r ../build/pino-pay-for-woocommerce.zip pino-pay-for-woocommerce
+
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" build/pino-pay-for-woocommerce.zip \
+            --title "$GITHUB_REF_NAME" \
+            --notes "فایل \`pino-pay-for-woocommerce.zip\` افزونهٔ ووکامرس است. پکیج لاراول با Composer نصب می‌شود. جزئیات در [CHANGELOG.md](https://github.com/OR81/pino-pay-integrations/blob/${GITHUB_REF_NAME}/CHANGELOG.md) و راهنمای نصب در [README.md](https://github.com/OR81/pino-pay-integrations/blob/${GITHUB_REF_NAME}/README.md) است."

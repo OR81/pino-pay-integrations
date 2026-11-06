@@ -3,7 +3,7 @@
  * Plugin Name:          Pino Pay for WooCommerce
  * Plugin URI:           https://github.com/OR81/pino-pay-integrations
  * Description:          درگاه پرداخت پینو پی برای ووکامرس. مشتری از صفحهٔ تسویه‌حساب به درگاه می‌رود و پس از پرداخت، سفارش خودکار تأیید می‌شود.
- * Version:              1.0.0
+ * Version:              1.0.1
  * Author:               Pino Site
  * Author URI:           https://pinosite.ir
  * License:              GPL-2.0-or-later
@@ -20,7 +20,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'PINOPAY_WC_VERSION', '1.0.0' );
+define( 'PINOPAY_WC_VERSION', '1.0.1' );
 define( 'PINOPAY_WC_FILE', __FILE__ );
 define( 'PINOPAY_WC_RECONCILE_HOOK', 'pinopay_wc_reconcile' );
 

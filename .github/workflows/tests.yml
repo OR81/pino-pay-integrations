@@ -42,6 +42,25 @@ jobs:
           composer update --no-interaction --prefer-dist --with-all-dependencies
       - run: vendor/bin/phpunit
 
+  install:
+    name: Install into a new Laravel project
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          coverage: none
+      - name: Follow the install steps with the newest Laravel
+        run: |
+          composer create-project laravel/laravel "$RUNNER_TEMP/app" --no-interaction --quiet
+          cd "$RUNNER_TEMP/app"
+          composer config repositories.pino-pay path "$GITHUB_WORKSPACE"
+          composer require "pinosite/laravel-pino-pay:*@dev" --no-interaction
+          php artisan vendor:publish --tag=pino-pay-config --no-interaction
+          test -f config/pino-pay.php
+          php artisan tinker --execute 'echo get_class(PinoSite\PinoPay\Facades\PinoPay::getFacadeRoot());' | grep -F 'PinoSite\PinoPay\PinoPay'
+
   plugin:
     name: WooCommerce plugin syntax on PHP ${{ matrix.php }}
     runs-on: ubuntu-latest

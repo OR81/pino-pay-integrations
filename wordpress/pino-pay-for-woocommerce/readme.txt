@@ -4,7 +4,7 @@ Tags: woocommerce, payment gateway, iran, ipg, rial
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -52,6 +52,9 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 حالت آزمایشی را در تنظیمات درگاه روشن کنید و پس از تست حتماً خاموشش کنید. تا این حالت روشن است، هر کسی می‌تواند بدون پرداخت سفارش را تکمیل کند.
 
 == Changelog ==
+
+= 1.0.1 =
+* نسخهٔ هماهنگ با پکیج لاراول؛ افزونه تغییری ندارد.
 
 = 1.0.0 =
 * نسخهٔ اول.

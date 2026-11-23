@@ -5,7 +5,7 @@
  * Description:          درگاه پرداخت پینو پی برای ووکامرس. مشتری از صفحهٔ تسویه‌حساب به درگاه می‌رود و پس از پرداخت، سفارش خودکار تأیید می‌شود.
  * Version:              1.0.2
  * Author:               Pino Site
- * Author URI:           https://pinosite.ir
+ * Author URI:           https://pinosite.com
  * License:              GPL-2.0-or-later
  * License URI:          https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:          pino-pay-for-woocommerce

@@ -26,7 +26,7 @@ PINO_PAY_MERCHANT_ID=کلید-درگاه-شما
 
 # اختیاری
 PINO_PAY_SANDBOX=false
-PINO_PAY_BASE_URL=https://pay.pinosite.ir
+PINO_PAY_BASE_URL=https://pay.pinosite.com
 PINO_PAY_TIMEOUT=20
 ```
 
@@ -34,7 +34,7 @@ PINO_PAY_TIMEOUT=20
 | --- | --- | --- |
 | `PINO_PAY_MERCHANT_ID` | ندارد | کلید درگاه از پنل پینو پی. فقط سمت سرور نگه دارید |
 | `PINO_PAY_SANDBOX` | `false` | روشن بودن آن همهٔ درخواست‌ها را به محیط آزمایشی می‌فرستد |
-| `PINO_PAY_BASE_URL` | `https://pay.pinosite.ir` | آدرس پینو پی |
+| `PINO_PAY_BASE_URL` | `https://pay.pinosite.com` | آدرس پینو پی |
 | `PINO_PAY_TIMEOUT` | `20` | حداکثر زمان انتظار برای پاسخ، به ثانیه |
 
 برای دیدن و تغییر فایل تنظیمات:
@@ -283,7 +283,7 @@ Http::fake([
         'code' => 100,
         'message' => 'Success',
         'authority' => 'P000000000000000000000000000000000001',
-        'payment_url' => 'https://pay.pinosite.ir/pay/P000000000000000000000000000000000001',
+        'payment_url' => 'https://pay.pinosite.com/pay/P000000000000000000000000000000000001',
         'fee' => 10000,
         'fee_type' => 'Merchant',
     ], 'errors' => []]),

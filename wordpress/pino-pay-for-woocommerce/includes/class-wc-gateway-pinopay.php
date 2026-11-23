@@ -78,7 +78,7 @@ class WC_Gateway_PinoPay extends WC_Payment_Gateway {
 				'title'       => __( 'آدرس پینو پی', 'pino-pay-for-woocommerce' ),
 				'type'        => 'text',
 				'description' => __( 'معمولاً نیازی به تغییر ندارد.', 'pino-pay-for-woocommerce' ),
-				'default'     => 'https://pay.pinosite.ir',
+				'default'     => 'https://pay.pinosite.com',
 			),
 			'debug'       => array(
 				'title'       => __( 'گزارش خطا', 'pino-pay-for-woocommerce' ),
@@ -424,7 +424,13 @@ class WC_Gateway_PinoPay extends WC_Payment_Gateway {
 	 * @return PinoPay_Api_Client
 	 */
 	private function client() {
-		return new PinoPay_Api_Client( $this->get_option( 'merchant_id' ), $this->is_sandbox(), $this->get_option( 'base_url' ) );
+		$base_url = untrailingslashit( (string) $this->get_option( 'base_url' ) );
+		// Stores set up before the move to pay.pinosite.com saved the old address with the settings.
+		if ( '' === $base_url || 'https://pay.pinosite.ir' === $base_url ) {
+			$base_url = 'https://pay.pinosite.com';
+		}
+
+		return new PinoPay_Api_Client( $this->get_option( 'merchant_id' ), $this->is_sandbox(), $base_url );
 	}
 
 	/**

@@ -14,7 +14,7 @@ class PinoPay
         private Factory $http,
         private string $merchantId,
         private bool $sandbox = false,
-        private string $baseUrl = 'https://pay.pinosite.ir',
+        private string $baseUrl = 'https://pay.pinosite.com',
         private int $timeout = 20,
     ) {}
 

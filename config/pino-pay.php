@@ -9,7 +9,7 @@ return [
     // Never leave this on in production, or orders can be completed without paying.
     'sandbox' => (bool) env('PINO_PAY_SANDBOX', false),
 
-    'base_url' => env('PINO_PAY_BASE_URL', 'https://pay.pinosite.ir'),
+    'base_url' => env('PINO_PAY_BASE_URL', 'https://pay.pinosite.com'),
 
     // Seconds to wait for an answer.
     'timeout' => (int) env('PINO_PAY_TIMEOUT', 20),

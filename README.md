@@ -3,20 +3,20 @@
 [![Tests](https://github.com/OR81/pino-pay-integrations/actions/workflows/tests.yml/badge.svg)](https://github.com/OR81/pino-pay-integrations/actions/workflows/tests.yml)
 [![Latest release](https://img.shields.io/github/v/release/OR81/pino-pay-integrations)](https://github.com/OR81/pino-pay-integrations/releases/latest)
 
-ماژول‌های آماده برای وصل کردن سایت به درگاه پرداخت [پینو پی](https://pay.pinosite.ir). این مخزن دو بسته دارد:
+ماژول‌های آماده برای وصل کردن سایت به درگاه پرداخت [پینو پی](https://pay.pinosite.com). این مخزن دو بسته دارد:
 
 | بسته | برای چه کسی | نصب | راهنمای کامل |
 | --- | --- | --- | --- |
 | **پکیج لاراول** | سایت‌هایی که با لاراول نوشته شده‌اند | Composer | [docs/laravel.md](docs/laravel.md) |
 | **افزونهٔ ووکامرس** | فروشگاه‌های وردپرسی با ووکامرس | فایل zip در وردپرس | [راهنمای افزونه](wordpress/pino-pay-for-woocommerce/README.md) |
 
-از زبان یا پلتفرم دیگری استفاده می‌کنید؟ مستندات API و نمونه‌کد PHP، Node.js و Python در [pay.pinosite.ir/docs](https://pay.pinosite.ir/docs) است.
+از زبان یا پلتفرم دیگری استفاده می‌کنید؟ مستندات API و نمونه‌کد PHP، Node.js و Python در [pay.pinosite.com/docs](https://pay.pinosite.com/docs) است.
 
 ## پیش از شروع
 
 در هر حالت این چهار قدم لازم است:
 
-1. در [پینو پی ثبت‌نام کنید](https://pay.pinosite.ir/register) و کد ملی و شماره شبا را در پنل کامل کنید.
+1. در [پینو پی ثبت‌نام کنید](https://pay.pinosite.com/register) و کد ملی و شماره شبا را در پنل کامل کنید.
 2. حساب را برای بررسی بفرستید. نتیجه پیامک می‌شود.
 3. در بخش «درگاه‌ها» برای سایت‌تان یک درگاه با دامنهٔ همان سایت بسازید و منتظر تأیید آن بمانید.
 4. کلید درگاه (`merchant_id`) را از صفحهٔ درگاه بردارید. این کلید را فقط سمت سرور نگه دارید.
